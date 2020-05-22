@@ -31,6 +31,57 @@ private final static String serviceEndpoint =
 
     private final static String signingRegion = "";
 
+public static String getMD5(String path) {
+		 BigInteger bi = null;
+		          try {
+		              byte[] buffer = new byte[8192];
+		              int len = 0;
+		              MessageDigest md = MessageDigest.getInstance("MD5");
+		              File f = new File(path);
+		              FileInputStream fis = new FileInputStream(f);
+		              while ((len = fis.read(buffer)) != -1) {
+		                 md.update(buffer, 0, len);
+		             }
+		             fis.close();
+		             byte[] b = md.digest();
+		             bi = new BigInteger(1, b);
+		         } catch (NoSuchAlgorithmException e) {
+		             e.printStackTrace();
+		         } catch (IOException e) {
+		             e.printStackTrace();
+		         }
+		         return bi.toString(16);
+   }
+	
+	
+	
+	public static List<String> getFiles(String path) {
+		
+		List<String> filesMD5 = new ArrayList<String>();
+		File file = new File(path);
+       // 如果这个路径是文件夹
+       if (file.isDirectory()) {
+           // 获取路径下的所有文件
+           File[] files = file.listFiles();
+           for (int i = 0; i < files.length; i++) {
+               // 如果还是文件夹 递归获取里面的文件 文件夹
+               if (files[i].isDirectory()) {
+                   System.out.println("目录：" + files[i].getPath());
+                   getFiles(files[i].getPath());
+               } else {
+                   System.out.println("文件：" + files[i].getPath());
+                   filesMD5.add(getMD5(files[i].getPath()));
+                   
+               }
+
+           }
+       } else {
+           System.out.println("文件：" + file.getPath());
+           filesMD5.add(getMD5(file.getPath()));
+       }
+       return filesMD5;
+	}
+
     public static void main(String[] args) {
         final BasicAWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
         final ClientConfiguration ccfg = new ClientConfiguration().
@@ -74,7 +125,10 @@ private final static String serviceEndpoint =
         	}
         	
         }
-       
+        //System.out.println(s3List);
+        
+        pcList = getFiles(filePath);
+        System.out.println(pcList);
 
         System.out.println("Done!");
     }
