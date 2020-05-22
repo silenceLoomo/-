@@ -112,19 +112,7 @@ public static String getMD5(String path) {
         	System.exit(1);
         }
 
-        //System.out.println(s3List);
-        
-        File pcfile = new File(filePath);
-        if(pcfile.isDirectory()) {
-        	File[] files = pcfile.listFiles();
-        	for(int i =0; i<files.length; i++) {
-        		//如果还是文件夹，递归获取里面的文件
-        		if(files[i].isDirectory()) {
-        			
-        		}
-        	}
-        	
-        }
+
         //System.out.println(s3List);
         
         pcList = getFiles(filePath);
