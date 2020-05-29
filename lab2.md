@@ -3,7 +3,7 @@
 
 拓展2：
 （1）连接spark服务器，并创建外部表
-![image](https://raw.githubusercontent.com/silenceLoomo/photo/master/lab3/%E6%8B%93%E5%B1%952-1.jpg)
+![Image](https://raw.githubusercontent.com/silenceLoomo/photo/master/lab2/ex2-1.jpg?token=ANXDPSH6ODNZTNT7SANGOH262CLVY)
 
 （2）验证：
-![image](https://raw.githubusercontent.com/silenceLoomo/photo/master/lab3/%E6%8B%93%E5%B1%952-2.jpg)
+![Image](https://raw.githubusercontent.com/silenceLoomo/photo/master/lab3/%E6%8B%93%E5%B1%952-2.jpg)
