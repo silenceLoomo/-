@@ -1,5 +1,5 @@
 拓展1：
-![image](lab3/拓展1.jpg)
+![image](https://raw.githubusercontent.com/silenceLoomo/photo/master/lab3/%E6%8B%93%E5%B1%951.jpg?token=ANXDPSHZQDKVUSJBCRC7VUS62CJQ2)
 
 拓展2：
 （1）连接spark服务器，并创建外部表
