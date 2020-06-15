@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     dataset_path = os.path.join("~/s3data/dataset", 'datasets_heart.csv')
 
-    # 读取iris.csv数据
+    # 读取数据
     df = pd.read_csv(dataset_path)
 
     # 前十条示例数据
